@@ -1,0 +1,88 @@
+{
+  "Linköping": {
+    "DOSPACE Link": [
+      {"namn": "Incontro", "kapacitet": "8 personer", "pris": "600 kr/timme"},
+      {"namn": "Halawai", "kapacitet": "6 personer", "pris": "500 kr/timme"},
+      {"namn": "Treffen", "kapacitet": "3 personer", "pris": "250 kr/timme"},
+      {"namn": "Conventus", "kapacitet": "12 personer", "pris": "800 kr/timme"},
+      {"namn": "Møde", "kapacitet": "2 personer", "pris": "200 kr/timme"},
+      {"namn": "Mitingu", "kapacitet": "4 personer", "pris": "400 kr/timme"},
+      {"namn": "Ganawa on Plan 18", "kapacitet": "4 personer", "pris": "300 kr/timme"},
+      {"namn": "Reunión", "kapacitet": "8 personer", "pris": "600 kr/timme"},
+      {"namn": "Fundur", "kapacitet": "3 personer", "pris": "250 kr/timme"}
+    ],
+    "DOSPACE Stora Torget": [
+      {"namn": "Coronado", "kapacitet": "10 personer", "pris": "650 kr/timme"},
+      {"namn": "Laguna", "kapacitet": "5 personer", "pris": "350 kr/timme"},
+      {"namn": "Malibu", "kapacitet": "16 personer", "pris": "900 kr/timme"},
+      {"namn": "Moonstone", "kapacitet": "4 personer", "pris": "400 kr/timme"},
+      {"namn": "Redondo", "kapacitet": "6 personer", "pris": "500 kr/timme"},
+      {"namn": "Venice", "kapacitet": "8 personer", "pris": "500 kr/timme"}
+    ],
+    "DOSPACE Mjärdevi Center, Linköping": [
+      {"namn": "Discovery", "kapacitet": "5 personer", "pris": "400 kr/timme"},
+      {"namn": "Millenium Falcon", "kapacitet": "4 personer", "pris": "250 kr/timme"},
+      {"namn": "Voyager", "kapacitet": "10 personer", "pris": "600 kr/timme"}
+    ],
+    "DOSPACE Alfa, Linköping": [
+      {"namn": "Alpha", "kapacitet": "25 personer", "pris": "1000 kr/timme"},
+      {"namn": "Aurum", "kapacitet": "100 personer", "pris": "5000 kr/timme"},
+      {"namn": "Beta", "kapacitet": "10 personer", "pris": "800 kr/timme"},
+      {"namn": "Delta", "kapacitet": "Ej specificerat", "pris": "350 kr/timme"},
+      {"namn": "Epsilon", "kapacitet": "6 personer", "pris": "400 kr/timme"},
+      {"namn": "Ferrum", "kapacitet": "8 personer", "pris": "600 kr/timme"},
+      {"namn": "Gamma", "kapacitet": "5 personer", "pris": "400 kr/timme"},
+      {"namn": "Kapersonera", "kapacitet": "5 personer", "pris": "400 kr/timme"},
+      {"namn": "Omega", "kapacitet": "6 personer", "pris": "600 kr/timme"},
+      {"namn": "Vitrum", "kapacitet": "20 personer", "pris": "500 kr/timme"}
+    ]
+  },
+  "Norrköping": {
+    "DOSPACE Industrilandskapet, Norrköping": [
+      {"namn": "Cromford", "kapacitet": "6 personer", "pris": "400 kr/timme"},
+      {"namn": "Hawthorn", "kapacitet": "10 personer", "pris": "600 kr/timme"},
+      {"namn": "Kingston", "kapacitet": "8 personer", "pris": "550 kr/timme"},
+      {"namn": "Lounge", "kapacitet": "50 personer", "pris": "2800 kr/dag"},
+      {"namn": "Plant studio", "kapacitet": "3 personer", "pris": "250 kr/timme"}
+    ]
+  },
+  "Jönköping": {
+    "DOSPACE Östra Storgatan Jönköping": [
+      {"namn": "Aalto", "kapacitet": "8 personer", "pris": "600 kr/timme"},
+      {"namn": "Ganni", "kapacitet": "4 personer", "pris": "350 kr/timme"},
+      {"namn": "Goya", "kapacitet": "6 personer", "pris": "300 kr/timme"},
+      {"namn": "Klint", "kapacitet": "3 personer", "pris": "200 kr/timme"},
+      {"namn": "Lamino", "kapacitet": "6 personer", "pris": "400 kr/timme"},
+      {"namn": "Lanto", "kapacitet": "3 personer", "pris": "350 kr/timme"},
+      {"namn": "Panton", "kapacitet": "10 personer", "pris": "800 kr/timme"},
+      {"namn": "Wegner", "kapacitet": "2 personer", "pris": "250 kr/timme"}
+    ],
+    "DOSPACE Munksjötornet, Jönköping": [
+      {"namn": "Furusato", "kapacitet": "8 personer", "pris": "450 kr/timme"},
+      {"namn": "Komorebi", "kapacitet": "4 personer", "pris": "300 kr/timme"},
+      {"namn": "Mankai", "kapacitet": "8 personer", "pris": "450 kr/timme"},
+      {"namn": "Shoganai", "kapacitet": "4 personer", "pris": "300 kr/timme"},
+      {"namn": "Tsukimi", "kapacitet": "8 personer", "pris": "450 kr/timme"},
+      {"namn": "Yugen", "kapacitet": "3 personer", "pris": "250 kr/timme"},
+      {"namn": "Zenkei", "kapacitet": "12 personer", "pris": "700 kr/timme"}
+    ]
+  },
+  "Gävle": {
+    "DOSPACE Gävle Norra Kungsgatan": [
+      {"namn": "Alfapet", "kapacitet": "8 personer", "pris": "500 kr/timme"},
+      {"namn": "Backgammon", "kapacitet": "3 personer", "pris": "250 kr/timme"},
+      {"namn": "Couronne", "kapacitet": "4 personer", "pris": "350 kr/timme"},
+      {"namn": "Kalaha", "kapacitet": "10 personer", "pris": "600 kr/timme"},
+      {"namn": "Othello", "kapacitet": "10 personer", "pris": "700 kr/timme"},
+      {"namn": "Yatzy", "kapacitet": "5 personer", "pris": "400 kr/timme"}
+    ],
+    "DOSPACE Gävle Stortorget": [
+      {"namn": "Framus", "kapacitet": "2 personer", "pris": "250 kr/timme"},
+      {"namn": "Fender", "kapacitet": "6 personer", "pris": "450 kr/timme"},
+      {"namn": "Gretsch", "kapacitet": "6 personer", "pris": "450 kr/timme"},
+      {"namn": "Gibson", "kapacitet": "10 personer", "pris": "550 kr/timme"},
+      {"namn": "Rickenbacker", "kapacitet": "12 personer", "pris": "600 kr/timme"},
+      {"namn": "Marshall", "kapacitet": "100 personer", "pris": "2,500 kr/timme"}
+    ]
+  }
+}

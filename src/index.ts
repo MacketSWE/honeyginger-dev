@@ -3,6 +3,7 @@ import path from "path";
 
 import { consoleLog } from "./utils/logger";
 import quizRoutes from "./feature/quiz/routes";
+import dobotRoutes from "./feature/doBot/routes";
 
 const cors = require("cors");
 require("dotenv").config();
@@ -22,6 +23,9 @@ app.get("/api", (req, res) => {
 
 // Use the quiz routes
 app.use("/api", quizRoutes);
+
+// Use the dobot routes
+app.use("/api", dobotRoutes);
 
 app.get("/api/ip", (req, res) => {
   // return service IP address
