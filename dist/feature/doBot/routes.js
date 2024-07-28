@@ -33,7 +33,7 @@ router.post("/dobot", (req, res) => __awaiter(void 0, void 0, void 0, function* 
         const { city, category, query, history } = req.body;
         (0, exports.consoleLog)(`${category} <--- category`);
         const gptResponse = yield (0, askDoGPT_1.askDoGPT)({ city, category, query, history });
-        const answer = gptResponse.data.choices[0].message.content;
+        const answer = gptResponse.choices[0].message.content;
         if (answer.includes("X-RUM-X")) {
             // console.log("Activating availability bot...");
             const availabilityResponse = yield (0, askFunctionCallingBot_1.askAvailabilityCheckerBot)({

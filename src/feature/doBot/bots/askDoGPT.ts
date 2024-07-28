@@ -27,7 +27,7 @@ export const askDoGPT = async ({
   category,
 }: AskDoGPTProps) => {
   // console.log(`Asking GPT-4 for ${city} ${category}...`);
-  const response = await openai.createChatCompletion({
+  const response = await openai.chat.completions.create({
     model: "gpt-4o",
     messages: [
       ...getPrompts({ city, category }),

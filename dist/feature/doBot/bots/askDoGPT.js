@@ -23,7 +23,7 @@ const getPrompts = ({ city, category }) => {
 };
 const askDoGPT = (_a) => __awaiter(void 0, [_a], void 0, function* ({ query, history, city, category, }) {
     // console.log(`Asking GPT-4 for ${city} ${category}...`);
-    const response = yield openai.createChatCompletion({
+    const response = yield openai.chat.completions.create({
         model: "gpt-4o",
         messages: [
             ...getPrompts({ city, category }),

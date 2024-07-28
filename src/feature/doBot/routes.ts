@@ -26,7 +26,7 @@ router.post("/dobot", async (req, res) => {
     const { city, category, query, history } = req.body;
     consoleLog(`${category} <--- category`);
     const gptResponse = await askDoGPT({ city, category, query, history });
-    const answer = gptResponse.data.choices[0].message.content;
+    const answer = gptResponse.choices[0].message.content;
 
     if (answer.includes("X-RUM-X")) {
       // console.log("Activating availability bot...");
