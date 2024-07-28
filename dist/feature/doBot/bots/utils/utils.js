@@ -4,9 +4,8 @@ exports.getGeneralInfoData = exports.getData = exports.logCost = void 0;
 const { SOURCE_DATA } = require("../data/sourceData");
 const logCost = (response) => {
     const { prompt_tokens, completion_tokens } = response.data.usage;
-    const isGpt4Turbo = response.data.model === "gpt-4-1106-preview";
-    const prompt_cost_usd = isGpt4Turbo ? 0.01 : 0.03;
-    const completion_cost_usd = isGpt4Turbo ? 0.03 : 0.06;
+    const prompt_cost_usd = 0.03;
+    const completion_cost_usd = 0.06;
     const total_cost_usd = prompt_cost_usd * (prompt_tokens / 1000) +
         completion_cost_usd * (completion_tokens / 1000);
     console.log(total_cost_usd + "usd", "<-- cost");

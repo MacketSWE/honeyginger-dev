@@ -13,8 +13,8 @@ exports.sendEmail = void 0;
 const db_1 = require("../db/db");
 const { google } = require("googleapis");
 require("dotenv").config();
-function sendEmail({ data }) {
-    return __awaiter(this, void 0, void 0, function* () {
+function sendEmail(_a) {
+    return __awaiter(this, arguments, void 0, function* ({ data }) {
         const jwtClient = new google.auth.JWT({
             email: "dobot-467@dobot-400808.iam.gserviceaccount.com",
             key: "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCUXzfXo6vf1i0F\n" +

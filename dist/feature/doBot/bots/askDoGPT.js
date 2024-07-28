@@ -21,11 +21,10 @@ const getPrompts = ({ city, category }) => {
         return getMeetingBotPrompts(city);
     }
 };
-const askDoGPT = ({ query, history, city, category, }) => __awaiter(void 0, void 0, void 0, function* () {
-    const model = "gpt-4-1106-preview";
+const askDoGPT = (_a) => __awaiter(void 0, [_a], void 0, function* ({ query, history, city, category, }) {
     // console.log(`Asking GPT-4 for ${city} ${category}...`);
     const response = yield openai.createChatCompletion({
-        model,
+        model: "gpt-4o",
         messages: [
             ...getPrompts({ city, category }),
             ...history,

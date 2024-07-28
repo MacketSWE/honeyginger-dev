@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.askEmailBot = exports.askAvailabilityCheckerBot = exports.askFunctionCallingBot = void 0;
 const functions_1 = require("../functions");
 const meetingFunctionCallingPrompts_1 = require("./prompts/meetingFunctionCallingPrompts");
-const askFunctionCallingBot = ({ city, query, }) => __awaiter(void 0, void 0, void 0, function* () {
+const askFunctionCallingBot = (_a) => __awaiter(void 0, [_a], void 0, function* ({ city, query, }) {
     const response = yield functions_1.openai.createChatCompletion({
         model: "gpt-4",
         messages: [...(0, meetingFunctionCallingPrompts_1.getFunctionCallingPrompt)({ city, query })],
@@ -24,7 +24,7 @@ const askFunctionCallingBot = ({ city, query, }) => __awaiter(void 0, void 0, vo
     return response;
 });
 exports.askFunctionCallingBot = askFunctionCallingBot;
-const askAvailabilityCheckerBot = ({ city, answer, }) => __awaiter(void 0, void 0, void 0, function* () {
+const askAvailabilityCheckerBot = (_b) => __awaiter(void 0, [_b], void 0, function* ({ city, answer, }) {
     const response = yield functions_1.openai.createChatCompletion({
         model: "gpt-4",
         messages: [...(0, meetingFunctionCallingPrompts_1.getAvailabilityCheckerPrompt)({ city, answer })],

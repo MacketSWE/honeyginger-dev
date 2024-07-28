@@ -156,7 +156,7 @@ const bookTestRoom = () => __awaiter(void 0, void 0, void 0, function* () {
 exports.bookTestRoom = bookTestRoom;
 const gotAllBookingData = (answer) => answer.includes("X-KLAR-X");
 exports.gotAllBookingData = gotAllBookingData;
-const handleBookMeetingRoom = ({ history, city, res, req, }) => __awaiter(void 0, void 0, void 0, function* () {
+const handleBookMeetingRoom = (_a) => __awaiter(void 0, [_a], void 0, function* ({ history, city, res, req, }) {
     console.log("Handling completed chat...");
     const functionQuery = history[history.length - 1].content;
     console.log("functionQuery", functionQuery);
@@ -253,7 +253,6 @@ const checkAndBookMeetingRoom = (room, start, end, description) => __awaiter(voi
     else if (!data.errors) {
         console.log("Room is available");
         console.log("Proceeding to book room...");
-        console.log("Booking room BBBB", room);
         const bookingOptions = {
             method: "POST",
             headers,
@@ -267,7 +266,6 @@ const checkAndBookMeetingRoom = (room, start, end, description) => __awaiter(voi
         };
         const bookingRes = yield fetch("https://app.officernd.com/api/v1/organizations/dospace/bookings", bookingOptions);
         const bookingData = yield bookingRes.json();
-        console.log(bookingData, "<--- bookingData");
         yield db_1.db.addLog({ name: "booked room", timestamp: new Date() });
         return "success";
     }

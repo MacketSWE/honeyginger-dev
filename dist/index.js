@@ -7,6 +7,7 @@ const express_1 = __importDefault(require("express"));
 const path_1 = __importDefault(require("path"));
 const logger_1 = require("./utils/logger");
 const routes_1 = __importDefault(require("./feature/quiz/routes"));
+const routes_2 = __importDefault(require("./feature/doBot/routes"));
 const cors = require("cors");
 require("dotenv").config();
 const app = (0, express_1.default)();
@@ -21,6 +22,8 @@ app.get("/api", (req, res) => {
 });
 // Use the quiz routes
 app.use("/api", routes_1.default);
+// Use the dobot routes
+app.use("/api", routes_2.default);
 app.get("/api/ip", (req, res) => {
     // return service IP address
     res.json({ ipOut: req.headers["x-forwarded-for"], ipIn: req.ip });
