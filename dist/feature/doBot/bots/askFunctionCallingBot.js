@@ -13,7 +13,7 @@ exports.askEmailBot = exports.askAvailabilityCheckerBot = exports.askFunctionCal
 const functions_1 = require("../functions");
 const meetingFunctionCallingPrompts_1 = require("./prompts/meetingFunctionCallingPrompts");
 const askFunctionCallingBot = (_a) => __awaiter(void 0, [_a], void 0, function* ({ city, query, }) {
-    const response = yield functions_1.openai.createChatCompletion({
+    const response = yield functions_1.openai.chat.completions.create({
         model: "gpt-4",
         messages: [...(0, meetingFunctionCallingPrompts_1.getFunctionCallingPrompt)({ city, query })],
         temperature: 0.3,
@@ -25,7 +25,7 @@ const askFunctionCallingBot = (_a) => __awaiter(void 0, [_a], void 0, function* 
 });
 exports.askFunctionCallingBot = askFunctionCallingBot;
 const askAvailabilityCheckerBot = (_b) => __awaiter(void 0, [_b], void 0, function* ({ city, answer, }) {
-    const response = yield functions_1.openai.createChatCompletion({
+    const response = yield functions_1.openai.chat.completions.create({
         model: "gpt-4",
         messages: [...(0, meetingFunctionCallingPrompts_1.getAvailabilityCheckerPrompt)({ city, answer })],
         temperature: 0.1,
@@ -37,7 +37,7 @@ const askAvailabilityCheckerBot = (_b) => __awaiter(void 0, [_b], void 0, functi
 });
 exports.askAvailabilityCheckerBot = askAvailabilityCheckerBot;
 const askEmailBot = (query) => __awaiter(void 0, void 0, void 0, function* () {
-    const response = yield functions_1.openai.createChatCompletion({
+    const response = yield functions_1.openai.chat.completions.create({
         model: "gpt-4",
         messages: [
             {
@@ -78,6 +78,6 @@ const askEmailBot = (query) => __awaiter(void 0, void 0, void 0, function* () {
         frequency_penalty: 0,
         presence_penalty: 0,
     });
-    return response.data.choices[0].message.content;
+    return response.choices[0].message.content;
 });
 exports.askEmailBot = askEmailBot;

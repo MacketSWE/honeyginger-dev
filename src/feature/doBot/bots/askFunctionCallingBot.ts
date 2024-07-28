@@ -14,9 +14,9 @@ export const askFunctionCallingBot = async ({
   city,
   query,
 }: AskFunctionCallingBotProps) => {
-  const response = await openai.createChatCompletion({
+  const response = await openai.chat.completions.create({
     model: "gpt-4",
-    messages: [...getFunctionCallingPrompt({ city, query })],
+    messages: [...getFunctionCallingPrompt({ city, query })] as any,
     temperature: 0.3,
     top_p: 1,
     frequency_penalty: 0,
@@ -35,9 +35,9 @@ export const askAvailabilityCheckerBot = async ({
   city,
   answer,
 }: AskAvailabilityCheckerBotProps) => {
-  const response = await openai.createChatCompletion({
+  const response = await openai.chat.completions.create({
     model: "gpt-4",
-    messages: [...getAvailabilityCheckerPrompt({ city, answer })],
+    messages: [...getAvailabilityCheckerPrompt({ city, answer })] as any,
     temperature: 0.1,
     top_p: 1,
     frequency_penalty: 0,
@@ -48,7 +48,7 @@ export const askAvailabilityCheckerBot = async ({
 };
 
 export const askEmailBot = async (query: string) => {
-  const response = await openai.createChatCompletion({
+  const response = await openai.chat.completions.create({
     model: "gpt-4",
     messages: [
       {
@@ -91,5 +91,5 @@ export const askEmailBot = async (query: string) => {
     presence_penalty: 0,
   });
 
-  return response.data.choices[0].message.content;
+  return response.choices[0].message.content;
 };

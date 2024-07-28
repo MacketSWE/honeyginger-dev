@@ -10,7 +10,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.sendEmail = void 0;
-const db_1 = require("../db/db");
 const { google } = require("googleapis");
 require("dotenv").config();
 function sendEmail(_a) {
@@ -67,10 +66,10 @@ function sendEmail(_a) {
             .replace(/\+/g, "-")
             .replace(/\//g, "_");
         try {
-            db_1.db.addLog({
-                name: "Trying to send email",
-                timestamp: new Date(),
-            });
+            // db.addLog({
+            //   name: "Trying to send email",
+            //   timestamp: new Date(),
+            // });
             const res = yield gmail.users.messages.send({
                 userId: "me",
                 requestBody: {
@@ -78,17 +77,17 @@ function sendEmail(_a) {
                 },
             });
             console.log("Email sent:", res.data.id);
-            db_1.db.addLog({
-                name: "Did send email",
-                timestamp: new Date(),
-            });
+            // db.addLog({
+            //   name: "Did send email",
+            //   timestamp: new Date(),
+            // });
         }
         catch (error) {
-            db_1.db.addLog({
-                name: "Failed to send email",
-                timestamp: new Date(),
-                error: `${error}`,
-            });
+            // db.addLog({
+            //   name: "Failed to send email",
+            //   timestamp: new Date(),
+            //   error: `${error}`,
+            // });
             console.error("Failed to send email:", error);
         }
     });

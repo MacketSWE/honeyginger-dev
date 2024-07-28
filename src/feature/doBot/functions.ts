@@ -1,10 +1,9 @@
-const { Configuration, OpenAIApi } = require("openai");
-require("dotenv").config();
+import OpenAI from "openai";
 
-const configuration = new Configuration({
-  apiKey: process.env.OPEN_AI_KEY,
+export const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+  organization: "org-20sgSWfhxJTx0Hz3NagXlYqK",
 });
-export const openai = new OpenAIApi(configuration);
 
 const SYSTEM_GENERAL = `
 Du är en trevlig kundservicemedarbetare som är expert på företaget DOSPACE. DOSPACE har kontorshotell, även kallat siter, i olika städer i sverige.

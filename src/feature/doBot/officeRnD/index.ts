@@ -1,6 +1,6 @@
 import { askEmailSendingBot } from "../bots/askEmailSendingBot";
 import { askFunctionCallingBot } from "../bots/askFunctionCallingBot";
-import { db } from "../db/db";
+// import { db } from "../db/db";
 import { sendEmail } from "../send-mail";
 import { EmailData } from "../types";
 
@@ -203,9 +203,9 @@ export const handleBookMeetingRoom = async ({
     city,
     query: functionQuery,
   });
-  const answer = functionResponse.data.choices[0].message.content;
+  const answer = functionResponse.choices[0].message.content;
   try {
-    const json = JSON.parse(answer);
+    const json = JSON.parse(answer || "");
     if (json.roomId && json.start && json.description && json.end) {
       console.log("JSON generated correctly, booking meeting room...");
       console.log(json, "<-- json");
@@ -224,7 +224,7 @@ export const handleBookMeetingRoom = async ({
           data: req.body,
         });
         const emailData = await askEmailSendingBot(functionQuery);
-        const emailJson: EmailData = JSON.parse(emailData);
+        const emailJson: EmailData = JSON.parse(emailData || "");
         console.log(emailJson, "<--- emailJson");
         sendEmail({
           data: emailJson,
@@ -304,7 +304,7 @@ export const checkAndBookMeetingRoom = async (
   );
   const data = await response.json();
   if (data.message === "Resource is not available in this time slot.") {
-    await db.addLog({ name: "Room is not available", timestamp: new Date() });
+    // await db.addLog({ name: "Room is not available", timestamp: new Date() });
     console.log("Room is not available");
   } else if (!data.errors) {
     console.log("Room is available");
@@ -325,14 +325,14 @@ export const checkAndBookMeetingRoom = async (
       bookingOptions
     );
     const bookingData = await bookingRes.json();
-    await db.addLog({ name: "booked room", timestamp: new Date() });
+    // await db.addLog({ name: "booked room", timestamp: new Date() });
     return "success";
   } else {
-    await db.addLog({
-      name: "error",
-      error: "Error booking room",
-      timestamp: new Date(),
-    });
+    // await db.addLog({
+    //   name: "error",
+    //   error: "Error booking room",
+    //   timestamp: new Date(),
+    // });
     console.log("Something went wrong");
   }
 

@@ -15,7 +15,7 @@ Här är sammanställningen av din bokning:
 Vänligen bekräfta att all information stämmer.`;
 
 export const askEmailSendingBot = async (query: string) => {
-  const response = await openai.createChatCompletion({
+  const response = await openai.chat.completions.create({
     model: "gpt-4",
     messages: [
       {
@@ -47,5 +47,5 @@ export const askEmailSendingBot = async (query: string) => {
     presence_penalty: 0,
   });
 
-  return response.data.choices[0].message.content;
+  return response.choices[0].message.content;
 };

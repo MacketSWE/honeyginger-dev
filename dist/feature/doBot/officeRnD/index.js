@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getAvailability = exports.generateData = exports.checkAndBookMeetingRoom = exports.seeIfAvalible = exports.handleBookMeetingRoom = exports.gotAllBookingData = exports.bookTestRoom = exports.bookValidateTestRoom = exports.getOfficeRnDMeetingBookings = void 0;
 const askEmailSendingBot_1 = require("../bots/askEmailSendingBot");
 const askFunctionCallingBot_1 = require("../bots/askFunctionCallingBot");
-const db_1 = require("../db/db");
+// import { db } from "../db/db";
 const send_mail_1 = require("../send-mail");
 const doBotId = "64e5d2b3d7a719478ccfaf3a";
 const officeRnD = {
@@ -164,9 +164,9 @@ const handleBookMeetingRoom = (_a) => __awaiter(void 0, [_a], void 0, function* 
         city,
         query: functionQuery,
     });
-    const answer = functionResponse.data.choices[0].message.content;
+    const answer = functionResponse.choices[0].message.content;
     try {
-        const json = JSON.parse(answer);
+        const json = JSON.parse(answer || "");
         if (json.roomId && json.start && json.description && json.end) {
             console.log("JSON generated correctly, booking meeting room...");
             console.log(json, "<-- json");
@@ -178,7 +178,7 @@ const handleBookMeetingRoom = (_a) => __awaiter(void 0, [_a], void 0, function* 
                     data: req.body,
                 });
                 const emailData = yield (0, askEmailSendingBot_1.askEmailSendingBot)(functionQuery);
-                const emailJson = JSON.parse(emailData);
+                const emailJson = JSON.parse(emailData || "");
                 console.log(emailJson, "<--- emailJson");
                 (0, send_mail_1.sendEmail)({
                     data: emailJson,
@@ -247,7 +247,7 @@ const checkAndBookMeetingRoom = (room, start, end, description) => __awaiter(voi
     const response = yield fetch("https://app.officernd.com/api/v1/organizations/dospace/bookings/summary", options);
     const data = yield response.json();
     if (data.message === "Resource is not available in this time slot.") {
-        yield db_1.db.addLog({ name: "Room is not available", timestamp: new Date() });
+        // await db.addLog({ name: "Room is not available", timestamp: new Date() });
         console.log("Room is not available");
     }
     else if (!data.errors) {
@@ -266,15 +266,15 @@ const checkAndBookMeetingRoom = (room, start, end, description) => __awaiter(voi
         };
         const bookingRes = yield fetch("https://app.officernd.com/api/v1/organizations/dospace/bookings", bookingOptions);
         const bookingData = yield bookingRes.json();
-        yield db_1.db.addLog({ name: "booked room", timestamp: new Date() });
+        // await db.addLog({ name: "booked room", timestamp: new Date() });
         return "success";
     }
     else {
-        yield db_1.db.addLog({
-            name: "error",
-            error: "Error booking room",
-            timestamp: new Date(),
-        });
+        // await db.addLog({
+        //   name: "error",
+        //   error: "Error booking room",
+        //   timestamp: new Date(),
+        // });
         console.log("Something went wrong");
     }
     // console.log(data, "<--- data");

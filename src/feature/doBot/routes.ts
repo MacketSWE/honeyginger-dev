@@ -36,10 +36,10 @@ router.post("/dobot", async (req, res) => {
       });
       try {
         consoleLog(
-          `${availabilityResponse.data.choices[0]}. <-- Bot generated JSON`
+          `${availabilityResponse.choices[0]}. <-- Bot generated JSON`
         );
         const json = JSON.parse(
-          availabilityResponse.data.choices[0].message.content
+          availabilityResponse.choices[0].message.content || ""
         );
         consoleLog("Checking available rooms...");
         const rooms = await getAvailability(json.id, json.start, json.end);

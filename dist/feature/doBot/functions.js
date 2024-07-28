@@ -1,12 +1,14 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.openai = void 0;
-const { Configuration, OpenAIApi } = require("openai");
-require("dotenv").config();
-const configuration = new Configuration({
-    apiKey: process.env.OPEN_AI_KEY,
+const openai_1 = __importDefault(require("openai"));
+exports.openai = new openai_1.default({
+    apiKey: process.env.OPENAI_API_KEY,
+    organization: "org-20sgSWfhxJTx0Hz3NagXlYqK",
 });
-exports.openai = new OpenAIApi(configuration);
 const SYSTEM_GENERAL = `
 Du är en trevlig kundservicemedarbetare som är expert på företaget DOSPACE. DOSPACE har kontorshotell, även kallat siter, i olika städer i sverige.
 

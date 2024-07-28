@@ -1,4 +1,4 @@
-import { db } from "../db/db";
+// import { db } from "../db/db";
 import { EmailData } from "../types";
 
 const { google } = require("googleapis");
@@ -69,10 +69,10 @@ export async function sendEmail({ data }: Props): Promise<void> {
     .replace(/\//g, "_");
 
   try {
-    db.addLog({
-      name: "Trying to send email",
-      timestamp: new Date(),
-    });
+    // db.addLog({
+    //   name: "Trying to send email",
+    //   timestamp: new Date(),
+    // });
     const res = await gmail.users.messages.send({
       userId: "me",
       requestBody: {
@@ -80,16 +80,16 @@ export async function sendEmail({ data }: Props): Promise<void> {
       },
     });
     console.log("Email sent:", res.data.id);
-    db.addLog({
-      name: "Did send email",
-      timestamp: new Date(),
-    });
+    // db.addLog({
+    //   name: "Did send email",
+    //   timestamp: new Date(),
+    // });
   } catch (error) {
-    db.addLog({
-      name: "Failed to send email",
-      timestamp: new Date(),
-      error: `${error}`,
-    });
+    // db.addLog({
+    //   name: "Failed to send email",
+    //   timestamp: new Date(),
+    //   error: `${error}`,
+    // });
     console.error("Failed to send email:", error);
   }
 }

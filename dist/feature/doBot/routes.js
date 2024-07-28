@@ -41,8 +41,8 @@ router.post("/dobot", (req, res) => __awaiter(void 0, void 0, void 0, function* 
                 answer,
             });
             try {
-                (0, exports.consoleLog)(`${availabilityResponse.data.choices[0]}. <-- Bot generated JSON`);
-                const json = JSON.parse(availabilityResponse.data.choices[0].message.content);
+                (0, exports.consoleLog)(`${availabilityResponse.choices[0]}. <-- Bot generated JSON`);
+                const json = JSON.parse(availabilityResponse.choices[0].message.content || "");
                 (0, exports.consoleLog)("Checking available rooms...");
                 const rooms = yield (0, officeRnD_1.getAvailability)(json.id, json.start, json.end);
                 (0, exports.consoleLog)(`Got available rooms: ${rooms}`);
