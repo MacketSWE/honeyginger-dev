@@ -12,10 +12,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.askLLama3 = exports.askChatGPT = exports.askLLM = void 0;
+exports.askLLama3 = exports.askChatGPT = exports.askLLM = exports.openai = void 0;
 require("dotenv").config();
 const openai_1 = __importDefault(require("openai"));
-const openai = new openai_1.default({
+exports.openai = new openai_1.default({
     apiKey: process.env.OPENAI_API_KEY,
     organization: "org-20sgSWfhxJTx0Hz3NagXlYqK",
 });
@@ -36,7 +36,7 @@ const askLLM = (messages, model) => __awaiter(void 0, void 0, void 0, function* 
 exports.askLLM = askLLM;
 function askChatGPT(messages_1, model_1) {
     return __awaiter(this, arguments, void 0, function* (messages, model, temperature = 1) {
-        const completion = yield openai.chat.completions.create({
+        const completion = yield exports.openai.chat.completions.create({
             messages: messages,
             model,
             temperature,

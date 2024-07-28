@@ -5,7 +5,7 @@ import { ChatCompletionMessageParam } from "openai/resources";
 
 import OpenAI from "openai";
 
-const openai = new OpenAI({
+export const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
   organization: "org-20sgSWfhxJTx0Hz3NagXlYqK",
 });
@@ -20,7 +20,7 @@ export type Messages = {
   content: string;
 };
 export type LLAMA_Model = "llama3-70b-8192" | "llama3-8b-8192";
-export type OPENAI_Model = "gpt-4-turbo" | "gpt-3.5-turbo";
+export type OPENAI_Model = "gpt-4-turbo" | "gpt-3.5-turbo" | "gpt-4o";
 export type LLM_Model = LLAMA_Model | OPENAI_Model;
 
 export const askLLM = async (messages: Messages[], model: LLM_Model) => {
