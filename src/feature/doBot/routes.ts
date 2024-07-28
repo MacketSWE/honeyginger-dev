@@ -17,6 +17,10 @@ export const consoleLog = (message: string, logInProd: boolean = false) => {
   }
 };
 
+router.get("/dobot/test", async (req, res) => {
+  res.json({ ipOut: "foo", ipIn: "bar" });
+});
+
 router.post("/dobot", async (req, res) => {
   try {
     const { city, category, query, history } = req.body;
