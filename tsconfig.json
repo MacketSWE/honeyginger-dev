@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "jsx": "react",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/bots/askDoGPT.tsx",
+    "src/ui/src/utils/api/index.tsx",
+    "src/ui/src/features/chat/utils/index.tsx",
+    "src/ui/src/features/chat/components/ContentWrapper/index.tsx",
+    "src/ui/src/components/PulseText/index.tsx"
+  ],
+  "exclude": ["node_modules"]
+}

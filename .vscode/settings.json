@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "/subscriptions/9457d162-5836-45b5-b04d-4133b2c49d55/resourceGroups/DoBot/providers/Microsoft.Web/sites/dobot",
+  "appService.deploySubpath": "."
+}
