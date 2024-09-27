@@ -5,6 +5,7 @@ import { consoleLog } from "./utils/logger";
 import quizRoutes from "./feature/quiz/routes";
 import dobotRoutes from "./feature/doBot/routes";
 import hpRoutes from "./feature/hp/routes";
+import mbizzRoutes from "./feature/monkeybizz/routes";
 
 const cors = require("cors");
 require("dotenv").config();
@@ -30,6 +31,9 @@ app.use("/api", dobotRoutes);
 
 // Use the hp routes
 app.use("/api", hpRoutes);
+
+// Use the mbizz routers
+app.use("/api", mbizzRoutes);
 
 app.get("/api/ip", (req, res) => {
   // return service IP address

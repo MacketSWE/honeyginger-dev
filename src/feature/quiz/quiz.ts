@@ -20,7 +20,11 @@ export type Messages = {
   content: string;
 };
 export type LLAMA_Model = "llama3-70b-8192" | "llama3-8b-8192";
-export type OPENAI_Model = "gpt-4-turbo" | "gpt-3.5-turbo" | "gpt-4o";
+export type OPENAI_Model =
+  | "gpt-4-turbo"
+  | "gpt-3.5-turbo"
+  | "gpt-4o"
+  | "gpt-4o-mini";
 export type LLM_Model = LLAMA_Model | OPENAI_Model;
 
 export const askLLM = async (messages: Messages[], model: LLM_Model) => {
